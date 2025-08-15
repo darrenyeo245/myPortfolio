@@ -1,34 +1,25 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import {Navigation} from "@/app/components/navigation";
 
 export const metadata: Metadata = {
-  title: "Darren Yeo",
-  description: "",
+    title: "Darren Yeo",
+    description: "Welcome to my personal website!",
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+        <body className="bg-gray-900 text-white">
+        <Navigation/>
+        <main className="flex min-h-screen flex-col items-left mt-24 ml-10">
+            {children}
+        </main>
+        </body>
+        </html>
+    );
 }
