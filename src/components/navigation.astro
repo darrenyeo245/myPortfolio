@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+const currentPath = Astro.url.pathname;
+---
+<nav class="flex justify-between p-4 text-[#E0E0E0]">
+    <div class="flex-1">
+        <a href="/" class="text-2xl font-bold hover:text-[#888888]">Darren Yeo</a>
+    </div>
+    <div class="flex justify-center gap-4">
+    <a href="/" class={`hover:text-hover ${currentPath === '/' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Home</a>
+    <a href="/projects"
+       class={`hover:text-hover ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Projects</a>
+    <a href="/contact"
+       class={`hover:text-hover${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Contact</a>
+    </div>
+    <div class="flex-1 flex justify-end">Fill</div>
+</nav>
+
