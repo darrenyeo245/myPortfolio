@@ -1,9 +1,23 @@
 @import "tailwindcss";
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-    --color-main: #E0E0E0;
-    --color-hover: #888888;
-    --color-border: #888888;
-    --color-background: #121212;
-    --color-secondarybackground: #1E1E1E;
-    --color-accent: #3A82F7;
+    --color-text: #1F2937;
+    --color-hover: #0EA5E9;
+    --color-border: #E5E7EB;
+    --color-background: #FAFAFA;
+    --color-secondarybackground: #F5F5F5;
+    --color-accent: #2563EB;
+}
+
+@theme.dark {
+    --color-text-dark: #E0E0E0;
+    --color-hover-dark: #888888;
+    --color-border-dark: #888888;
+    --color-background-dark: #121212;
+    --color-secondarybackground-dark: #1E1E1E;
+    --color-accent-dark: #3A82F7;
 }
