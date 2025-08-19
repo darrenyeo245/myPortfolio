@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@tailwind components;
 @tailwind utilities;
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -21,3 +20,4 @@
     --color-secondarybackground-dark: #1E1E1E;
     --color-accent-dark: #3A82F7;
 }
+

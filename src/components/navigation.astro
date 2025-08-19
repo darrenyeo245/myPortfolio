@@ -3,44 +3,41 @@ import "../styles/global.css";
 import "../../public/sun.svg";
 import "../../public/moon.svg";
 import ColorMode from "../components/colorMode.astro";
-import { useEffect } from 'react';
-import {AstroCookies} from "astro";
-const handleToggle = (isDark) => {
-    if (isDark) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-    } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-    }
-};
 const currentPath = Astro.url.pathname;
-const isDarkMode = Astro.cookies.get('darkMode')?.value === 'true';
 ---
 <nav class="flex justify-between p-4">
     <div class="flex-1">
-        <a href="/" class="text-2xl font-bold hover:text-hover dark:text-hover-dark">Darren Yeo</a>
+        <a href="/" class="text-2xl font-bold hover:text-hover ">Darren Yeo</a>
     </div>
     <div class="flex justify-center gap-4">
         <a href="/"
-           class={`hover:text-hover dark:text-hover-dark ${currentPath === '/' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Home</a>
+           class={`hover:text-hover  ${currentPath === '/' ? 'font-bold border-b-4 border-accent pb-2 dark:border-accent-dark' : ''}`}>Home</a>
         <a href="/projects"
-           class={`hover:text-hover dark:text-hover-dark ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Projects</a>
+           class={`hover:text-hover  ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Projects</a>
         <a href="/contact"
-           class={`hover:text-hover dark:text-hover-dark ${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Contact</a>
+           class={`hover:text-hover  ${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Contact</a>
     </div>
     <div class="flex-1 flex justify-end">
-        <button
-                class="w-8 h-8 flex items-center justify-center cursor-pointer hover:opacity-80"
-                aria-label="Toggle color mode"
-                onClick={() => handleToggle(isDarkMode)}
-        >
-            <img
-                    src={isDarkMode ? "/sun.svg" : "/moon.svg"}
-                    alt={isDarkMode ? "Light Mode Icon" : "Dark Mode Icon"}
-                    class="w-6 h-6"
-            />
+        <button type="button" id="theme-selector">
+            <span class="sr-only">Enable <span class="dark:hidden">light</span><span
+                    class="hidden dark:inline">dark</span> mode</span>
+            <img src="moon.svg" alt="Dark Mode Icon" class="dark:hidden w-6 h-6">
+            <img src="sun.svg" alt="Light Mode Icon" class="hidden dark:inline w-6 h-6">
         </button>
-    </div>
+            <script>
+                document.getElementById('theme-selector')?.addEventListener('click', () => {
+                    console.log('Theme toggle clicked');
+                    if (localStorage.theme === 'dark') {
+                        console.log('Switching to light mode');
+                        localStorage.theme = 'light';
+                        document.documentElement.classList.remove('dark');
+                    } else {
+                        console.log('Switching to dark mode');
+                        localStorage.theme = 'dark';
+                        document.documentElement.classList.add('dark');
+                    }
+                });
+            </script>
+
 </nav>
 

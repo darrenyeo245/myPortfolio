@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
@@ -7,7 +7,14 @@
     <meta name="generator" content={Astro.generator}/>
     <title>Darren Yeo</title>
 </head>
-<body class="bg-background text-text dark:bg-background-dark dark:text-text-dark">
+<body class="bg-background text-text ">
 <slot/>
+<script>
+    if (localStorage.theme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+</script>
 </body>
 </html>
