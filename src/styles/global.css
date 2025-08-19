@@ -10,9 +10,6 @@
     --color-background: #FAFAFA;
     --color-secondarybackground: #F5F5F5;
     --color-accent: #2563EB;
-}
-
-@theme.dark {
     --color-text-dark: #E0E0E0;
     --color-hover-dark: #888888;
     --color-border-dark: #888888;
