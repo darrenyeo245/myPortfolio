@@ -1,3 +1,7 @@
+---
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
+---
 <!doctype html>
 <html lang="en" class="dark">
 <head>
@@ -7,7 +11,9 @@
     <meta name="generator" content={Astro.generator}/>
     <title>Darren Yeo</title>
 </head>
-<body class=" bg-background text-text dark:bg-background-dark dark:text-text-dark ">
+<body class="flex flex-col min-h-screen bg-background text-text dark:bg-background-dark dark:text-text-dark ">
+<Navigation />
 <slot/>
+<Footer />
 </body>
 </html>
