@@ -1,30 +1,17 @@
 ---
-import "../styles/global.css";
+import { skills } from "../data/skills";
 ---
 <div class="text-left border-2 rounded-2xl mt-10 p-10 bg-secondarybackground border-accent dark:bg-secondarybackground-dark dark:border-accent-dark">
     <section>
         <h1 class="text-4xl font-bold mb-5">My Development Stack</h1>
         <p class="mb-5 text-secondarytext dark:text-secondarytext-dark">Here are some technologies I work with:</p>
-        <ul class="grid grid-cols-3 grid-rows-2 flex-wrap gap-4 text-xl justify-content-center text-center">
-            <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">
-                <i class="devicon-html5-plain colored text-4xl"></i>
-                HTML
-            </li>
-            <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">
-                <i class="devicon-python-plain colored text-4xl"></i>Python
-            </li>
-            <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">
-                <i class="devicon-typescript-plain colored text-4xl"></i>TypeScript
-            </li>
-            <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">
-                <i class="devicon-react-plain colored text-4xl"></i>React
-            </li>
-            <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">
-                <i class="devicon-astro-plain colored text-4xl"></i>Astro
-            </li>
-            <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">
-                <i class="devicon-tailwindcss-plain colored text-4xl"></i>Tailwind CSS
-            </li>
+        <ul class="grid grid-cols-3 grid-rows-2 gap-4 text-xl justify-content-center text-center font-bold">
+            {skills.map(skill => (
+                    <li class="hover:scale-105 transition-transform  border rounded-lg p-4 border-accent bg-secondarybackground dark:border-accent-dark dark:bg-secondarybackground-dark ">
+                        <i class={skill.icon + " text-4xl align-middle mr-2"}></i>
+                        {skill.name}
+                    </li>
+            ))}
         </ul>
     </section>
 </div>

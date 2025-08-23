@@ -1,10 +1,15 @@
-<div class="mx-40 mt-10 p-10">
-    <ul class="grid grid-cols-3 grid-rows-2 flex-wrap gap-4 text-xl justify-content-center text-center ">
-        <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">Project1</li>
-        <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">Project2</li>
-        <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">Project3</li>
-        <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">Project4</li>
-        <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">Project5</li>
-        <li class="border rounded-lg p-4 border-accent dark:border-accent-dark">Project6</li>
+---
+import {projects} from "../data/projects";
+---
+
+<div class="p-10">
+    <ul class="grid grid-cols-2 grid-rows-3 flex-wrap gap-4 text-xl justify-content-center text-center font-bold">
+        {projects.map(project => (
+        <li class="text-left border rounded-lg p-4 border-accent dark:border-accent-dark hover:scale-105 transition-transform bg-secondarybackground dark:bg-secondarybackground-dark">
+            <img src={project.image} alt={project.name} class="w-100 h-60 mx-auto mb-2"/>
+            {project.name}
+           <p class="font-normal text-lg">{project.description}</p>
+        </li>
+        ))}
     </ul>
 </div>
