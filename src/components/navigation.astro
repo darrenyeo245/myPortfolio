@@ -11,18 +11,18 @@ const currentPath = Astro.url.pathname;
     </div>
     <div class="flex justify-center gap-4">
         <a href="/"
-           class={`hover:text-hover dark:hover-text-dark  ${currentPath === '/' ? 'font-bold border-b-4 border-accent pb-2 dark:border-accent-dark' : ''}`}>Home</a>
+           class={`hover:text-hover dark:hover:text-hover-dark  ${currentPath === '/' ? 'font-bold border-b-4 border-accent pb-2 dark:border-accent-dark' : ''}`}>Home</a>
         <a href="/projects"
-           class={`hover:text-hover dark:hover-text-dark  ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Projects</a>
+           class={`hover:text-hover dark:hover:text-hover-dark  ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Projects</a>
         <a href="/contact"
-           class={`hover:text-hover dark:hover-text-dark ${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Contact</a>
+           class={`hover:text-hover dark:hover:text-hover-dark ${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Contact</a>
     </div>
 
     <div class="flex-1 flex justify-end gap-4 items-center">
         <a href="https://github.com/darrenyeo245" target="_blank" rel="noopener norefferer" class="flex flex-col" >
             <i class="devicon-github-original colored text-2xl dark:invert"></i>
         </a>
-        <button type="button" id="theme-selector">
+        <button type="button" id="theme-selector" class="bg-secondarybackground hover:bg-gray-300 dark:bg-secondarybackground-dark dark:hover:bg-hover-dark cursor-pointer rounded px-2 py-2 transition-colors">
             <span class="sr-only">Enable <span class="dark:hidden">light</span><span
                     class="hidden dark:inline">dark</span> mode</span>
             <img src="moon.svg" alt="Dark Mode Icon" class="dark:hidden w-6 h-6">

@@ -7,7 +7,7 @@ import {skills} from "../data/skills";
         <p class="mb-5 text-secondarytext dark:text-secondarytext-dark">Here are some technologies I work with:</p>
         <ul class="grid grid-cols-3 grid-rows-2 gap-4 text-xl justify-content-center text-center font-bold">
             {skills.map(skill => (
-                    <li class="hover:scale-105 transition-transform  border rounded-lg p-4 border-accent bg-secondarybackground dark:border-accent-dark dark:bg-secondarybackground-dark ">
+                    <li class="hover:scale-105 transition-transform  border rounded-lg p-4 border-accent bg-secondarybackground dark:border-accent-dark dark:bg-box-dark ">
                         <a href={skill.url} target="_blank" rel="noopener noreferrer"
                            class="flex flex-col items-center">
                             <i class={skill.icon + " text-4xl align-middle"}></i>

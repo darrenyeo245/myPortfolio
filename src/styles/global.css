@@ -10,13 +10,15 @@
     --color-border: #E5E7EB;
     --color-background: #FAFAFA;
     --color-secondarybackground: #F5F5F5;
+    --color-box: #FFFFFF;
     --color-accent: #2563EB;
     --color-text-dark: #E0E0E0;
     --color-secondarytext-dark: #A5A5A5;
-    --color-hover-dark: #888888;
+    --color-hover-dark: #636363;
     --color-border-dark: #888888;
-    --color-background-dark: #121212;
-    --color-secondarybackground-dark: #1E1E1E;
-    --color-accent-dark: #3A82F7;
+    --color-background-dark: #000000;
+    --color-secondarybackground-dark: #141414;
+    --color-box-dark: #222222;
+    --color-accent-dark: #636363;
 }
 
