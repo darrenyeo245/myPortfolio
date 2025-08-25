@@ -17,6 +17,7 @@ console.log("Current Path:", currentPath);
            class={clsx(`hover:text-hover dark:hover:text-hover-dark  ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`)}>Projects</a>
         <a href="/contact"
            class={clsx(`hover:text-hover dark:hover:text-hover-dark ${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`)}>Contact</a>
+        <p>{currentPath}</p>
     </div>
 
     <div class="flex-1 flex justify-end gap-4 items-center">
