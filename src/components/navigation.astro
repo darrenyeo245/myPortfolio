@@ -1,9 +1,13 @@
 ---
-import clsx from "clsx";
 import "../../public/sun.svg";
 import "../../public/moon.svg";
 import ColorMode from "../components/colorMode.astro";
-const currentPath = Astro.url.pathname;
+
+function normalizePath(path: string) {
+    if (path === "/") return "/";
+    return path.replace(/\/$/, "");
+}
+const currentPath = normalizePath(Astro.url.pathname);
 console.log("Current Path:", currentPath);
 ---
 <nav class="flex justify-between p-4">
@@ -12,11 +16,11 @@ console.log("Current Path:", currentPath);
     </div>
     <div class="flex justify-center gap-4">
         <a href="/"
-           class={clsx(`hover:text-hover dark:hover:text-hover-dark  ${currentPath === '/' ? 'font-bold border-b-4 border-accent pb-2 dark:border-accent-dark' : ''}`)}>Home</a>
+           class={`hover:text-hover dark:hover:text-hover-dark  ${currentPath === '/' ? 'font-bold border-b-4 border-accent pb-2 dark:border-accent-dark' : ''}`}>Home</a>
         <a href="/projects"
-           class={clsx(`hover:text-hover dark:hover:text-hover-dark  ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`)}>Projects</a>
+           class={`hover:text-hover dark:hover:text-hover-dark  ${currentPath === '/projects' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Projects</a>
         <a href="/contact"
-           class={clsx(`hover:text-hover dark:hover:text-hover-dark ${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`)}>Contact</a>
+           class={`hover:text-hover dark:hover:text-hover-dark ${currentPath === '/contact' ? 'font-bold border-b-4 border-accent pb-2  dark:border-accent-dark' : ''}`}>Contact</a>
         <p>{currentPath}</p>
     </div>
 
