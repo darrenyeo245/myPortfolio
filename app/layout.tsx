@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import {Navigation} from "@/app/components/navigation";
+import {Footer} from "@/app/components/footer";
 import 'devicon/devicon.min.css';
 import React from "react";    
 
@@ -20,6 +21,7 @@ export default function RootLayout(
         <main className="flex min-h-screen flex-col items-left mt-24 ml-10">
             {children}
         </main>
+        <Footer/>
         </body>
         </html>
     );
