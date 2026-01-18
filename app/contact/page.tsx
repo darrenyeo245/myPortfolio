@@ -63,6 +63,12 @@ export default function Contact() {
                                     @darrenyeo245
                                 </a>
                             </div>
+                            <div className="flex items-center gap-3">
+                                <span className="font-semibold">LinkedIn:</span>
+                                <a href="https://linkedin.com/in/darren-yeo" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                                    linkedin.com/in/darren-yeo
+                                </a>
+                            </div>
                         </div>
                     </div>
 
