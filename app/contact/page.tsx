@@ -1,36 +1,38 @@
 "use client";
-import React, {useState} from "react";
+
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
+    useEffect(() => {
+        emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+    }, []);
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus('loading');
-
-        const formData = new FormData(e.currentTarget);
-        const data = {
-            name: formData.get('name') as string,
-            email: formData.get('email') as string,
-            message: formData.get('message') as string,
-        };
+        
+        const form = e.currentTarget;
 
         try {
-            const response = await fetch('api/send/route', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
+            const result = await emailjs.sendForm(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                e.currentTarget,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
 
-            if (response.ok) {
+            console.log('EmailJS Response:', result);
+
+            if (result.status === 200) {
                 setStatus('success');
-                e.currentTarget.reset();
+                form.reset();
             } else {
                 setStatus('error');
             }
         } catch (error) {
+            console.error('EmailJS Error:', error);
             setStatus('error');
         }
     };
@@ -57,17 +59,8 @@ export default function Contact() {
 
                             <div className="flex items-center gap-3">
                                 <span className="font-semibold">GitHub:</span>
-                                <a href="https://github.com/darrenyeo245" target="_blank" rel="noopener noreferrer"
-                                   className="text-accent hover:underline">
+                                <a href="https://github.com/darrenyeo245" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                                     @darrenyeo245
-                                </a>
-                            </div>
-
-                            <div className="flex items-center gap-3">
-                                <span className="font-semibold">LinkedIn:</span>
-                                <a href="https://linkedin.com/in/darren-yeo" target="_blank" rel="noopener noreferrer"
-                                   className="text-accent hover:underline">
-                                    linkedin.com/in/darren-yeo
                                 </a>
                             </div>
                         </div>
@@ -78,34 +71,25 @@ export default function Contact() {
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
                                 <label htmlFor="name" className="block mb-2 font-medium">Name</label>
-                                <input type="text" id="name"
-                                       className="w-full px-4 py-2 rounded-lg border-2 border-accent bg-background focus:outline-none focus:ring-2 focus:ring-accent"
-                                       required/>
+                                <input type="text" id="name" name="user_name" className="w-full px-4 py-2 rounded-lg border-2 border-accent bg-background focus:outline-none focus:ring-2 focus:ring-accent" required />
                             </div>
 
                             <div>
                                 <label htmlFor="email" className="block mb-2 font-medium">Email</label>
-                                <input type="email" id="email"
-                                       className="w-full px-4 py-2 rounded-lg border-2 border-accent bg-background focus:outline-none focus:ring-2 focus:ring-accent"
-                                       required/>
+                                <input type="email" id="email" name="user_email" className="w-full px-4 py-2 rounded-lg border-2 border-accent bg-background focus:outline-none focus:ring-2 focus:ring-accent" required />
                             </div>
 
                             <div>
                                 <label htmlFor="message" className="block mb-2 font-medium">Message</label>
-                                <textarea id="message" rows={5}
-                                          className="w-full px-4 py-2 rounded-lg border-2 border-accent bg-background focus:outline-none focus:ring-2 focus:ring-accent"
-                                          required></textarea>
+                                <textarea id="message" name="message" rows={5} className="w-full px-4 py-2 rounded-lg border-2 border-accent bg-background focus:outline-none focus:ring-2 focus:ring-accent" required></textarea>
                             </div>
 
-                            <button type="submit" disabled={status === 'loading'}
-                                    className="w-full bg-accent text-background font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
+                            <button type="submit" disabled={status === 'loading'} className="w-full bg-accent text-background font-semibold py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50">
                                 {status === 'loading' ? 'Sending...' : 'Send Message'}
                             </button>
 
-                            {status === 'success' &&
-                                <p className="text-green-500 text-center">Message sent successfully!</p>}
-                            {status === 'error' &&
-                                <p className="text-red-500 text-center">Failed to send message. Currently not working, sorry :(</p>}
+                            {status === 'success' && <p className="text-green-500 text-center">Message sent successfully!</p>}
+                            {status === 'error' && <p className="text-red-500 text-center">Failed to send message. Please try again.</p>}
                         </form>
                     </div>
                 </div>
@@ -113,4 +97,5 @@ export default function Contact() {
         </div>
     );
 }
+
 
