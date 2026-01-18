@@ -3,12 +3,14 @@ import DevStack from "@/app/home/devstack";
 
 export default function Home() {
 
-  return (
-    <main className="flex min-h-screen flex-col items-center  ml-20 mr-20 ">
-    <div className="text-left">
-        <AboutMe />
-        <DevStack />
-    </div>
-    </main>
-  );
+    return (
+        <main className="flex min-h-screen flex-col items-center py-6 md:py-10">
+            <div className="w-full max-w-7xl px-4">
+                <div className="grid grid-cols-1 gap-6 lg:gap-8">
+                    <AboutMe/>
+                    <DevStack/>
+                </div>
+            </div>
+        </main>
+    );
 }

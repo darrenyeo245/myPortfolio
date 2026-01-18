@@ -18,8 +18,10 @@ export default function RootLayout(
         <html lang="en">
         <body className="bg-background text-text dark:bg-background-dark dark:text-text-dark">
         <Navigation/>
-        <main className="flex min-h-screen flex-col items-left mt-24 ml-10">
+        <main className="min-h-screen px-4 mt-24 sm:px-6 md:px-10 lg:px-12 pb-20">
+            <div className="max-w-7xl mx-auto">
             {children}
+            </div>
         </main>
         <Footer/>
         </body>
