@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {ColorModeToggle} from "@/app/components/colorMode";
 export const Navigation = () => {
@@ -9,12 +10,9 @@ export const Navigation = () => {
                 <a href="/" className="text-2xl font-bold hover:text-hover">Darren Yeo</a>
             </div>
             <div className="flex justify-center gap-8 text-lg">
-                <a href="/"
-                   className={`hover:text-hover  ${pathname === '/' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Home</a>
-                <a href="/projects"
-                   className={`hover:text-hover  ${pathname === '/projects' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Projects</a>
-                <a href="/contact"
-                   className={`hover:text-hover ${pathname === '/contact' ? 'font-bold border-b-4 border-accent pb-2 ' : ''}`}>Contact</a>
+                <Link href="/" className={`hover:text-hover ${pathname === '/' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Home</Link>
+                <Link href="/projects" className={`hover:text-hover ${pathname === '/projects' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Projects</Link>
+                <Link href="/contact" className={`hover:text-hover ${pathname === '/contact' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Contact</Link>
             </div>
             <div className="flex-1 flex justify-end gap-5 items-center">
                 <a href="https://github.com/darrenyeo245" target="_blank" rel="noopener norefferer"

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
     const links = [
         {name: "Home", url: "/"},
@@ -10,9 +12,9 @@ export function Footer() {
                 <small className="flex-1">© 2025 Darren Yeo</small>
                 <nav className="flex-1 flex justify-center gap-4 align-middle">
                     {links.map(link => (
-                        <a key={link.name} href={link.url}>
+                        <Link key={link.name} href={link.url}>
                             {link.name}
-                        </a>
+                        </Link>
                     ))}
                 </nav>
                 <div className="flex-1"></div>

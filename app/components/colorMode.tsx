@@ -2,9 +2,11 @@
 import { useEffect, useState } from "react";
 
 export function ColorModeToggle() {
-    const [isDark, setIsDark] = useState(() =>
-        typeof window !== "undefined" && document.documentElement.classList.contains('dark')
-    );
+    const [isDark, setIsDark] = useState<boolean | null>(null);
+
+    useEffect(() => {
+        setIsDark(document.documentElement.classList.contains('dark'));
+    }, []);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
@@ -32,6 +34,8 @@ export function ColorModeToggle() {
             setIsDark(true);
         }
     };
+
+    if (isDark === null) return <div className="w-10 h-10" />;
 
     return (
         <button
