@@ -33,6 +33,10 @@ export const projects: project[] = [
     {   name: "Bowl-A-Rama",
         description: "An arcade-style bowling game developed using Unity and C# focused on working with external controllers. The user uses a mobile phone as an remote controller to play the game.",
         image: "Bowl-A-Rama.png"
-        
+    },
+    {
+        name: "OSC-based Reinforcement Learning System for adaptive control of media devices",
+        description: "An abstracted reinforcement learning system that uses Open Sound Control (OSC) protocol to adaptively control media devices by learning different policies through a dynamic configuration of the environment for different scenarios.",
+        image: "RL-System.png"
     }
 ];
