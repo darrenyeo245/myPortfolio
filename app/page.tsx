@@ -1,5 +1,6 @@
 import AboutMe from "@/app/home/about";
 import DevStack from "@/app/home/devstack";
+import GitHubContributions from "@/app/home/githubcontributions";
 
 export default function Home() {
 
@@ -9,6 +10,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 gap-6 lg:gap-8">
                     <AboutMe/>
                     <DevStack/>
+                    <GitHubContributions/>
                 </div>
             </div>
         </main>
