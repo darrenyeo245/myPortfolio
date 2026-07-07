@@ -6,6 +6,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
+    --font-display: var(--font-display);
+    --font-body: var(--font-body);
+    --font-mono: var(--font-mono);
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
@@ -36,48 +39,48 @@
 
 :root {
     --radius: 0.625rem;
-    
-    --background: #FFFFFF;
-    --foreground: #1F2937;
-    --secondary: #F5F5F5;
+
+    --background: #FAFAF6;
+    --foreground: #1A1A1A;
+    --secondary: #F0EFEA;
     --muted: #6B7280;
-    --accent: #2563EB;
-    --border: #E5E7EB;
+    --accent: #00A388;
+    --border: #E2E0D8;
     --card: #FFFFFF;
     --primary: #0EA5E9;
-    
-    --card-foreground: #1F2937;
+
+    --card-foreground: #1A1A1A;
     --popover: #FFFFFF;
-    --popover-foreground: #1F2937;
+    --popover-foreground: #1A1A1A;
     --primary-foreground: #FFFFFF;
-    --secondary-foreground: #1F2937;
+    --secondary-foreground: #1A1A1A;
     --muted-foreground: #6B7280;
     --accent-foreground: #FFFFFF;
     --destructive: oklch(0.577 0.245 27.325);
-    --input: #E5E7EB;
-    --ring: #2563EB;
+    --input: #E2E0D8;
+    --ring: #00A388;
 }
 
 .dark {
-    --background: #000000;
-    --foreground: #E0E0E0;
-    --secondary: #141414;
+    --background: #0A0A0B;
+    --foreground: #EDEDED;
+    --secondary: #17181A;
     --muted: #A5A5A5;
-    --accent: #ff8e00;
-    --border: #888888;
-    --card: #222222;
+    --accent: #2DE0BC;
+    --border: #2A2B2E;
+    --card: #141516;
     --primary: #636363;
-    
-    --card-foreground: #E0E0E0;
-    --popover: #222222;
-    --popover-foreground: #E0E0E0;
-    --primary-foreground: #E0E0E0;
-    --secondary-foreground: #E0E0E0;
+
+    --card-foreground: #EDEDED;
+    --popover: #141516;
+    --popover-foreground: #EDEDED;
+    --primary-foreground: #EDEDED;
+    --secondary-foreground: #EDEDED;
     --muted-foreground: #A5A5A5;
-    --accent-foreground: #000000;
+    --accent-foreground: #0A0A0B;
     --destructive: oklch(0.704 0.191 22.216);
-    --input: #888888;
-    --ring: #ff8e00;
+    --input: #2A2B2E;
+    --ring: #2DE0BC;
 }
 
 @layer base {

@@ -40,9 +40,9 @@ export default function Contact() {
     return (
         <div className="flex min-h-screen flex-col items-center py-6 md:py-10">
             <div className="w-full max-w-4xl px-4">
-                <h1 className="text-4xl font-bold mb-8 text-center">Get In Touch</h1>
+                <h1 className="text-4xl font-bold mb-8 text-center font-display">Get In Touch</h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-body">
                     <div className="space-y-6">
                         <div>
                             <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>

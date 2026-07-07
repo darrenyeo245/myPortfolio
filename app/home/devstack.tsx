@@ -11,7 +11,7 @@ import {
 
 export default function DevStack() {
     return (
-        <div className="border-2 border-accent rounded-xl p-6 shadow-md bg-secondarybackground mt-5">
+        <div className="border-2 border-accent rounded-xl p-6 shadow-md bg-background mt-5 font-mono">
             <h1 className="text-2xl font-bold text-foreground">My Development Stack</h1>
             <p className="text-m text-muted-foreground mt-2">These are some of the technologies I work with:</p>
 

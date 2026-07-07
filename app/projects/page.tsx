@@ -4,10 +4,10 @@ export default function Projects() {
         <div>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xl text-center font-bold">
                 {projects.map(project => (
-                    <li key={project.name} className="text-left border-2 rounded-lg p-4 border-accent hover:scale-105 transition-transform bg-secondarybackground">
+                    <li key={project.name} className="text-left border-2 rounded-lg p-4 border-accent hover:scale-105 transition-transform bg-secondarybackground font-display">
                         <img src={project.image} alt={project.name} className="w-100 h-60 mx-auto mb-2"/>
                         {project.name}
-                        <p className="font-normal text-lg">{project.description}</p>
+                        <p className="font-normal text-lg font-body">{project.description}</p>
                     </li>
                 ))}
             </ul>

@@ -5,16 +5,15 @@ export default function AboutMe() {
         return Math.floor((currentDate.getTime() - birthDate.getTime()) / 3.15576e10)
     }
     return (
-        <div
-            className="text-left border-2 rounded-2xl mt-10 p-10 bg-secondarybackground border-accent">
+        <div className="text-left mt-10 py-6">
             <section>
-                <h1 className="text-4xl font-bold ">Hello, my Name is Darren Yeo.</h1>
-                <div className="mt-2 text-secondarytext">
+                <h1 className="text-5xl md:text-6xl font-bold font-display leading-tight">Hello, my Name is Darren Yeo.</h1>
+                <div className="mt-6 text-secondarytext max-w-2xl font-body">
                     <p className="text-lg ">I’m {getAge()} years old and currently studying Media Engineering at
-                        Fachhochschule
-                        Kiel.
-                        Alongside my studies I work on several personal projects.</p>
-                    <ul className="pt-4">
+                        the University of Applied Sciences Kiel.
+                        Alongside my studies I am working for the Zukunfstlabor Generative KI (ZGKI) as a project assistant.
+                    </p>
+                    <ul className="pt-6 space-y-2 text-lg">
                         <li><span className="font-bold text-text">Location:</span> Germany, Kiel
                         </li>
                         <li><span className="font-bold text-text">Languages:</span> German, English,

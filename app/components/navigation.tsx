@@ -4,11 +4,11 @@ import {ColorModeToggle} from "@/app/components/colorMode";
 export const Navigation = () => {
     const pathname = usePathname();
     return (
-        <nav className="fixed top-0 left-0 right-0 flex justify-between p-4 bg-background z-50">
+        <nav className="fixed top-0 left-0 right-0 flex justify-between p-4 bg-background/70 backdrop-blur-md border-b border-border/50 z-50 font-display   ">
             <div className="flex-1">
                 <a href="/" className="text-2xl font-bold hover:text-hover">Darren Yeo</a>
             </div>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-8 text-lg">
                 <a href="/"
                    className={`hover:text-hover  ${pathname === '/' ? 'font-bold border-b-4 border-accent pb-2' : ''}`}>Home</a>
                 <a href="/projects"

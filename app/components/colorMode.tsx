@@ -2,7 +2,9 @@
 import { useEffect, useState } from "react";
 
 export function ColorModeToggle() {
-    const [isDark, setIsDark] = useState(false);
+    const [isDark, setIsDark] = useState(() =>
+        typeof window !== "undefined" && document.documentElement.classList.contains('dark')
+    );
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
