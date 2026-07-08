@@ -1,6 +1,7 @@
 import AboutMe from "@/app/home/about";
 import DevStack from "@/app/home/devstack";
 import GitHubContributions from "@/app/home/githubcontributions";
+import MiniGame from "@/app/home/minigame";
 
 export default function Home() {
 
@@ -11,6 +12,7 @@ export default function Home() {
                     <AboutMe/>
                     <DevStack/>
                     <GitHubContributions/>
+                    <MiniGame/>
                 </div>
             </div>
         </main>

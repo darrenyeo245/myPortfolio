@@ -50,7 +50,7 @@ export default function RootLayout(
         <body className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} bg-background text-text dark:bg-background-dark dark:text-text-dark font-body`}>
         <div className="fixed inset-0 -z-10 overflow-hidden">
             <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-accent/30 rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"></div>
+            <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px]"></div>
         </div>
         <Navigation/>
         <main className="min-h-screen px-4 mt-24 sm:px-6 md:px-10 lg:px-12 pb-20">
